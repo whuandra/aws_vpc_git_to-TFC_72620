@@ -1,4 +1,4 @@
-provider "aws" {
+/* provider "aws" {
     region = "${var.region}"
     #access_key  = var.aws_access_key_id
     #secret_key  = var.aws_secret_access_key
@@ -76,4 +76,25 @@ resource "aws_route_table_association" "public" {
 
   subnet_id      = aws_subnet.public[count.index].id
   route_table_id = aws_route_table.public.id
+}*/
+    
+terraform {
+  required_version = "~> 0.12.8"
+}
+
+# Download any stable version in AWS provider of 2.19.0 or higher in 2.19 train
+provider "aws" {
+  version = "~> 2.27.0"
+  region  = "us-east-1"
+}
+
+# Build the VPC
+resource "aws_vpc" "vpc" {
+  cidr_block           = "10.1.0.0/16"
+  instance_tenancy     = "default"
+
+  tags = {
+    Name      = "Vpc"
+    Terraform = "true"
+  }
 }

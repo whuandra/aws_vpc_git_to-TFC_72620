@@ -1,4 +1,4 @@
-variable "aws_secret_access_key" {
+/*variable "aws_secret_access_key" {
   type = string
   }
 variable "aws_access_key_id" {
@@ -43,4 +43,4 @@ variable "availability_zones" {
   default     = ["us-east-1a", "us-east-1b"]
   type        = list
   description = "List of availability zones"
-}
+}*/

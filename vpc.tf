@@ -1,10 +1,10 @@
 provider "aws" {
     region = "${var.region}"
-    access_key  = var.aws_access_key_id
-    secret_key  = var.aws_secret_access_key
+    #access_key  = var.aws_access_key_id
+    #secret_key  = var.aws_secret_access_key
     
-    #access_key = "${var.aws_access_key}"
-    #secrect_key = "${var.aws_secret_key}"
+    access_key = "${var.AWS_ACCESS_KEY_ID}"
+    secret_key = "${var.AWS_SECRET_ACCESS_KEY}"
 
 }
 

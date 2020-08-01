@@ -12,6 +12,7 @@ resource "aws_vpc" "default" {
   tags = {
     Name      = "Vpc-Winoto"
     Terraform = "true"
+  }
 }
 
 

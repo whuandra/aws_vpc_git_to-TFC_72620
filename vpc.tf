@@ -1,5 +1,5 @@
 
-/* # VPC resources: This will create 1 VPC with 4 subnets, 1 IGW, 4 RT
+# VPC resources: This will create 1 VPC with 4 subnets, 1 IGW, 4 RT
 
 resource "aws_vpc" "default" {
     cidr_block = var.cidr_block
@@ -7,6 +7,9 @@ resource "aws_vpc" "default" {
     enable_dns_hostname = true
 }
 
+resource "aws_internet_gateway" "default"{
+    vpc_id = aws_vpc.default.id
+}
 
 
 resource "aws_route_table" "private" {
@@ -65,9 +68,9 @@ resource "aws_route_table_association" "public" {
 
   subnet_id      = aws_subnet.public[count.index].id
   route_table_id = aws_route_table.public.id
-}*/
+}
     
-terraform {
+/*terraform {
   required_version = "~> 0.12.8"
 }
 
@@ -91,4 +94,4 @@ resource "aws_vpc" "vpc" {
 }
 resource "aws_internet_gateway" "default"{
     vpc_id = aws_vpc.default.id
-}
+}*/

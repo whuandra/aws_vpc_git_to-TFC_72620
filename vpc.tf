@@ -1,14 +1,5 @@
-/* provider "aws" {
-    region = "${var.region}"
-    #access_key  = var.aws_access_key_id
-    #secret_key  = var.aws_secret_access_key
-    
-    aws_access_key_id = var.aws_access_key_id
-    aws_secret_access_key = var.aws_secret_access_key
 
-}
-
-# VPC resources: This will create 1 VPC with 4 subnets, 1 IGW, 4 RT
+/* # VPC resources: This will create 1 VPC with 4 subnets, 1 IGW, 4 RT
 
 resource "aws_vpc" "default" {
     cidr_block = var.cidr_block
@@ -16,9 +7,7 @@ resource "aws_vpc" "default" {
     enable_dns_hostname = true
 }
 
-resource "aws_internet_gateway" "default"{
-    vpc_id = aws_vpc.default.id
-}
+
 
 resource "aws_route_table" "private" {
     count = length(var,private_subnet_cidr_blocks)
@@ -93,6 +82,10 @@ resource "aws_vpc" "vpc" {
   cidr_block           = "10.1.0.0/16"
   instance_tenancy     = "default"
 
+resource "aws_internet_gateway" "default"{
+    vpc_id = aws_vpc.default.id
+}
+    
   tags = {
     Name      = "Vpc"
     Terraform = "true"

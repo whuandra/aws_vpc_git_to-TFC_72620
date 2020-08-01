@@ -1,5 +1,24 @@
 
-# VPC resources: This will create 1 VPC with 4 subnets, 1 IGW, 4 RT
+provider "aws" {
+      region     = "${var.region}"
+     
+}
+
+
+resource "aws_vpc" "default" {
+  cidr_block           = var.cidr_block
+  enable_dns_support   = true
+  enable_dns_hostnames = true
+}
+
+
+
+
+
+
+
+
+/* # VPC resources: This will create 1 VPC with 4 subnets, 1 IGW, 4 RT
 provider "aws" {
   version = "~> 2.27.0"
   region  = "us-east-1"

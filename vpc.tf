@@ -82,12 +82,13 @@ resource "aws_vpc" "vpc" {
   cidr_block           = "10.1.0.0/16"
   instance_tenancy     = "default"
 
-resource "aws_internet_gateway" "default"{
-    vpc_id = aws_vpc.default.id
-}
+
     
   tags = {
     Name      = "Vpc"
     Terraform = "true"
   }
+}
+resource "aws_internet_gateway" "default"{
+    vpc_id = aws_vpc.default.id
 }

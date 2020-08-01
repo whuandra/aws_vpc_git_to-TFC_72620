@@ -1,3 +1,12 @@
+variable "region" {
+  default     = "us-east-1"
+  type        = string
+  description = "Region of the VPC"
+}
+
+
+
+
 /*variable "aws_secret_access_key" {
   type = string
   }
@@ -12,7 +21,7 @@ variable "aws_access_key_id" {
 #variable "aws_secret_access_key" {
 #     description = "Secret key to AWS console"
 #     
-#}*/
+#}
 
 variable "region" {
   default     = "us-east-1"
@@ -43,4 +52,4 @@ variable "availability_zones" {
   default     = ["us-east-1a", "us-east-1b"]
   type        = list
   description = "List of availability zones"
-}
+}*/

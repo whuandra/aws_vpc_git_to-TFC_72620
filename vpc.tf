@@ -95,7 +95,7 @@ resource "aws_internet_gateway" "default"{
     vpc_id = aws_vpc.default.id
 }
     
-/*terraform {
+terraform {
   required_version = "~> 0.12.8"
 }
 

@@ -19,7 +19,11 @@ resource "aws_internet_gateway" "default" {
   vpc_id = aws_vpc.default.id
 }
 
+resource "aws_route_table" "private" {
+  count = length(var.private_subnet_cidr_blocks)
 
+  vpc_id = aws_vpc.default.id
+}
 
 
 

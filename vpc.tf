@@ -22,9 +22,6 @@ resource "aws_route_table" "private" {
   vpc_id = aws_vpc.default.id
 }
 
-
-/* # VPC resources: This will create 1 VPC with 4 subnets, 1 IGW, 4 RT
-
 resource "aws_route" "private" {
     count = length(var.private_subnet_cidr_blocks)
 
@@ -44,6 +41,11 @@ resource "aws_route" "public" {
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = aws_internet_gateway.default.id
 }
+
+/* # VPC resources: This will create 1 VPC with 4 subnets, 1 IGW, 4 RT
+
+
+
 
 resource "aws_subnet" "private" {
   count = length(var.private_subnet_cidr_blocks)

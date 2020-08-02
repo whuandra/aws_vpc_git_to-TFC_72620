@@ -10,8 +10,7 @@ resource "aws_vpc" "default" {
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
-    Name      = "Vpc-Winoto2"
-    Terraform = "true"
+    Name      = "Vpc-Winoto333    Terraform = "true"
   }
 }
 

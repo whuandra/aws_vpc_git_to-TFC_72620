@@ -1,9 +1,6 @@
-
 provider "aws" {
       region     = "${var.region}"
-     
 }
-
 
 resource "aws_vpc" "default" {
   cidr_block           = var.cidr_block
@@ -26,29 +23,7 @@ resource "aws_route_table" "private" {
 }
 
 
-
-
 /* # VPC resources: This will create 1 VPC with 4 subnets, 1 IGW, 4 RT
-provider "aws" {
-  version = "~> 2.27.0"
-  region  = "us-east-1"
-}
-
-resource "aws_vpc" "default" {
-    cidr_block = var.cidr_block
-    enable_dns_support = true
-    enable_dns_hostnames = true
-}
-
-
-
-
-resource "aws_route_table" "private" {
-    count = length(var,private_subnet_cidr_blocks)
-
-    vpc_id = aws_vpc.default.vpc_id
-    
-}
 
 resource "aws_route" "private" {
     count = length(var.private_subnet_cidr_blocks)
